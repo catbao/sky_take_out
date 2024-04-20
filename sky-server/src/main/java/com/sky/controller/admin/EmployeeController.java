@@ -82,7 +82,7 @@ public class EmployeeController {
      */
     @PostMapping
     @ApiOperation("新增员工接口")
-    public Result save(@RequestBody EmployeeDTO employeeDTO){
+    public Result<String> save(@RequestBody EmployeeDTO employeeDTO){
         log.info("新增员工：{}", employeeDTO);
         employeeService.save(employeeDTO);
         return Result.success();
