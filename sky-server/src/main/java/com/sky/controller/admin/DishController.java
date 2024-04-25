@@ -55,7 +55,7 @@ public class DishController {
     @ApiOperation("菜品批量删除")
     public Result<String> delete(@RequestParam List<Long> ids){
         log.info("删除菜品：{}", ids);
-        dishService.deleteDishs(ids);
+        dishService.deleteBatch(ids);
 
         //将所有菜品缓存清除
         cleanCache("dish_*");
